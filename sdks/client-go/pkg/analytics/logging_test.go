@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/featurehub-io/featurehub/sdks/client-go/pkg/models"
+	"github.com/enixdark/featurehub/sdks/client-go/pkg/models"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 )

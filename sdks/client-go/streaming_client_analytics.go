@@ -3,7 +3,7 @@ package client
 import (
 	"reflect"
 
-	"github.com/featurehub-io/featurehub/sdks/client-go/pkg/interfaces"
+	"github.com/enixdark/featurehub/sdks/client-go/pkg/interfaces"
 )
 
 // AddAnalyticsCollector configures the client with a new analytics collector:

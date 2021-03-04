@@ -7,6 +7,9 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/donovanhide/eventsource v0.0.0-20171031113327-3ed64d21fb0b h1:eR1P/A4QMYF2/LpHRhYAts9wyYEtF7qNk/tVNiYCWc8=
 github.com/donovanhide/eventsource v0.0.0-20171031113327-3ed64d21fb0b/go.mod h1:56wL82FO0bfMU5RvfXoIwSOP2ggqqxT+tAfNEIyxuHw=
+github.com/featurehub-io/featurehub v0.0.0-20210216083752-da78bae9e750 h1:WlV4sKXATtgUAJj6lj+Pf+CVHP8lVjPKBzcA15/2K7o=
+github.com/featurehub-io/featurehub/sdks/client-go v0.0.0-20210216083752-da78bae9e750 h1:fJTggqxSBI8HZnvmljtatXnZ4vA+7SJ1NYQGzizd1rY=
+github.com/featurehub-io/featurehub/sdks/client-go v0.0.0-20210216083752-da78bae9e750/go.mod h1:cdsM7Cqn1c7sHBAl9s9b/QOMads9qlESnYAVkFOwQrA=
 github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3 h1:CE8S1cTafDpPvMhIxNJKvHsGVBgn1xWYf1NbHQhywc8=

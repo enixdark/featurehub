@@ -1,7 +1,7 @@
 package interfaces
 
 import (
-	"github.com/featurehub-io/featurehub/sdks/client-go/pkg/models"
+	"github.com/enixdark/featurehub/sdks/client-go/pkg/models"
 )
 
 // AnalyticsCollector allows the user to generate analytics events:

@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/donovanhide/eventsource"
-	"github.com/featurehub-io/featurehub/sdks/client-go/pkg/errors"
-	"github.com/featurehub-io/featurehub/sdks/client-go/pkg/models"
+	"github.com/enixdark/featurehub/sdks/client-go/pkg/errors"
+	"github.com/enixdark/featurehub/sdks/client-go/pkg/models"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 )

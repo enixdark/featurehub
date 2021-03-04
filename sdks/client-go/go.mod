@@ -1,10 +1,11 @@
-module github.com/featurehub-io/featurehub/sdks/client-go
+module github.com/enixdark/featurehub/sdks/client-go
 
 go 1.14
 
 require (
 	github.com/berdowsky/go-ogle-analytics v0.0.0-20180507070355-0e42771d3f03
 	github.com/donovanhide/eventsource v0.0.0-20171031113327-3ed64d21fb0b
+	github.com/featurehub-io/featurehub/sdks/client-go v0.0.0-20210216083752-da78bae9e750
 	github.com/google/uuid v1.1.1
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mcuadros/go-version v0.0.0-20190830083331-035f6764e8d2
