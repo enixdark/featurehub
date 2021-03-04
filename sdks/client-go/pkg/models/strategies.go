@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"math"
 
 	"github.com/mcuadros/go-version"
@@ -18,6 +19,7 @@ const (
 	strategyConditionalLess          = "LESS"
 	strategyConditionalLessEquals    = "LESS_EQUALS"
 	strategyConditionalNotEquals     = "NOT_EQUALS"
+	strategyFieldUserKey             = "userkey"
 	strategyFieldNameCountry         = "country"
 	strategyFieldNameDevice          = "device"
 	strategyFieldNamePlatform        = "platform"
@@ -55,6 +57,10 @@ func (ss Strategies) calculate(clientContext *Context) interface{} {
 	// Go through the available strategies:
 	for _, strategy := range ss {
 		logger.Tracef("Checking strategy (%s)", strategy.ID)
+		// skip when off flag
+		if strategy.Value.(bool) == false {
+			continue
+		}
 
 		// Check if we match any percentage-based rule:
 		if !strategy.proceedWithPercentage(hashKey) {
@@ -116,6 +122,15 @@ func (s Strategy) proceedWithAttributes(clientContext *Context) bool {
 
 		// Handle each different client-context attribute:
 		switch sa.FieldName {
+
+		case strategyFieldUserKey:
+
+			fmt.Printf("\n TTTTT %s \n", sa.matchConditional(sa.Values, string(clientContext.Userkey)))
+			if len(clientContext.Userkey) > 0 && sa.matchConditional(sa.Values, string(clientContext.Userkey)) {
+				continue
+			}
+			logger.Tracef("Didn't match attribute strategy (%s:%s = %v) for country: %v\n", sa.ID, sa.FieldName, sa.Values, clientContext.Country)
+			return false
 
 		// Match by country name:
 		case strategyFieldNameCountry:
