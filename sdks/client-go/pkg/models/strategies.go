@@ -3,6 +3,8 @@ package models
 import (
 	"fmt"
 	"math"
+	"regexp"
+	"strings"
 
 	"github.com/mcuadros/go-version"
 	"github.com/spaolacci/murmur3"
@@ -19,6 +21,9 @@ const (
 	strategyConditionalLess          = "LESS"
 	strategyConditionalLessEquals    = "LESS_EQUALS"
 	strategyConditionalNotEquals     = "NOT_EQUALS"
+	strategyConditionEndWith         = "ENDS_WITH"
+	strategyConditionStartWith       = "STARTS_WITH"
+	strategyConditionRegex           = "REGEX"
 	strategyFieldUserKey             = "userkey"
 	strategyFieldNameCountry         = "country"
 	strategyFieldNameDevice          = "device"
@@ -198,6 +203,33 @@ func (sa *StrategyAttribute) matchConditional(slice []string, contains string) b
 			}
 		}
 		return true
+
+	case sa.Conditional == strategyConditionStartWith:
+		for _, value := range slice {
+			if strings.HasPrefix(contains, value) {
+				return true
+			}
+		}
+		return false
+
+	case sa.Conditional == strategyConditionEndWith:
+		for _, value := range slice {
+			if strings.HasSuffix(contains, value) {
+				return true
+			}
+		}
+		return false
+
+	case sa.Conditional == strategyConditionRegex:
+		for _, value := range slice {
+			regex := regexp.MustCompile(value)
+			match := regex.MatchString(contains)
+			if match {
+				return true
+			}
+		}
+
+		return false
 
 	// If our value <= any value in the slice then we do NOT match:
 	case sa.Conditional == strategyConditionalGreater && sa.Type == strategyTypeSemanticVersion:
